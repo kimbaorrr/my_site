@@ -9,7 +9,7 @@
     "fe": "Bootstrap 5, JQuery, TFJS, ...",
     "be": "NodeJS",
     "type": "Cá nhân",
-    "status": false,
+    "status": true,
     "viewer": 0,
     "git": "https://github.com/kimbaorrr/tfjs_ai"
   },
