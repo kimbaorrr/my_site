@@ -162,6 +162,7 @@ $(document).ready(function () {
     /**
      * Chức năng tìm dự án
      */
+    $("#btnAll").click();
     let searchText = $(this).val().toLowerCase().trim();
     $("#listDuAn .da").each(function () {
       let daTitle = $(this).find("h4").text().toLowerCase();
