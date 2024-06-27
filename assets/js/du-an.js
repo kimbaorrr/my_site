@@ -17,12 +17,15 @@ async function loadListDuAn() {
   $.each(dsDuAn, function (idx, item) {
     // Đặt nhãn status
     let item_status = item.status ? "Done" : "Pending";
-    let item_status_color = `<span class="px-4 py-0.5 ${item.status ? "bg-green-600" : "bg-red-600"} mb-1 rounded-lg">${item_status}</span>`;
-    let item_project_url = 
-    `<button type="button" 
+    let item_status_color = `<span class="px-4 py-0.5 ${
+      item.status ? "bg-green-600" : "bg-red-600"
+    } mb-1 rounded-lg">${item_status}</span>`;
+    let item_project_url = `<button type="button" 
       onclick="updateLuotTruyCap(${item.id}, '${item.project_url}');" 
       class="px-4 py-0.5 bg-blue-600 hover:bg-blue-800 mb-1 
-      rounded-lg ${item.project_url == "#" ? "opacity-50 cursor-not-allowed" : ""}" ${item.project_url == "#" ? "disabled" : ""}>
+      rounded-lg ${
+        item.project_url == "#" ? "opacity-50 cursor-not-allowed" : ""
+      }" ${item.project_url == "#" ? "disabled" : ""}>
       Thử nghiệm
     </button>`;
     // Đặt element
@@ -102,7 +105,7 @@ function hideAllDACard() {
   /**
    * Ẩn tất cả thẻ dự án
    */
-  $("#btnStatus button").removeClass(
+  $("#daStatus button").removeClass(
     "border-b-4 border-green-500 border-red-500 border-blue-500"
   );
   $("#listDuAn .da").hide();
@@ -140,29 +143,33 @@ $(document).ready(function () {
   loadListDuAn();
 
   // Chức năng lọc theo trạng thái
-  $("#btnDone").click(function () {
+  $("#daStatus button").click(function () {
     hideAllDACard();
-    $(this).addClass("border-b-4 border-green-500");
-    $("#listDuAn .da-Done").show();
-  });
-
-  $("#btnPending").click(function () {
-    hideAllDACard();
-    $(this).addClass("border-b-4 border-red-500");
-    $("#listDuAn .da-Pending").show();
-  });
-
-  $("#btnAll").click(function () {
-    hideAllDACard();
-    $(this).addClass("border-b-4 border-blue-500");
-    $("#listDuAn .da").show();
+    let da_status_val = $(this).data("da-status");
+    let listDuAn = $("#listDuAn");
+    switch (da_status_val) {
+      case "all":
+        $(this).addClass("border-b-4 border-blue-500");
+        listDuAn.find(".da").show();
+        break;
+      case "pending":
+        $(this).addClass("border-b-4 border-red-500");
+        listDuAn.find(".da-Pending").show();
+        break;
+      case "done":
+        $(this).addClass("border-b-4 border-green-500");
+        listDuAn.find(".da-Done").show();
+        break;
+      default:
+        break;
+    }
   });
 
   $("#searchBar input").on("keyup", function () {
     /**
      * Chức năng tìm dự án
      */
-    $("#btnAll").click();
+    $("#daStatus button")[0].click();
     let searchText = $(this).val().toLowerCase().trim();
     $("#listDuAn .da").each(function () {
       let daTitle = $(this).find("h4").text().toLowerCase();

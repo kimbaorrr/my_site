@@ -50,15 +50,16 @@
                         <p class="text-base md:text-lg md:leading-7 text-gray-500 dark:text-gray-400">Danh sách những dự
                             án mà mình đã và đang làm.</p>
                         <div class="flex flex-col items-center justify-between sm:flex-row">
-                            <div class="space-y-2 sm:space-y-0 sm:space-x-2" id="btnStatus">
-                                <button type="button" id="btnAll"
-                                    class="w-full sm:w-36 px-4 py-2 text-sm font-semibold text-gray-900 bg-transparent hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-600 border-b-4 border-blue-500 duration-300">Tất
+                            <div class="space-y-2 sm:space-y-0 sm:space-x-2 text-sm font-semibold text-gray-900 dark:text-gray-100"
+                                id="daStatus">
+                                <button type="button" data-da-status="all"
+                                    class="w-full sm:w-36 px-4 py-2 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 border-b-4 border-blue-500 duration-300">Tất
                                     cả</button>
-                                <button type="button" id="btnPending"
-                                    class="w-full sm:w-36 px-4 py-2 text-sm font-semibold text-gray-900 bg-transparent hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-600 duration-300">Chưa
+                                <button type="button" data-da-status="pending"
+                                    class="w-full sm:w-36 px-4 py-2 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 duration-300">Chưa
                                     hoàn thành</button>
-                                <button type="button" id="btnDone"
-                                    class="w-full sm:w-36 px-4 py-2 text-sm font-semibold text-gray-900 bg-transparent hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-600 duration-300">Đã
+                                <button type="button" data-da-status="done"
+                                    class="w-full sm:w-36 px-4 py-2 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 duration-300">Đã
                                     hoàn thành</button>
                             </div>
                             <div class="flex items-center mt-4 sm:mt-0" id="searchBar">
