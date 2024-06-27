@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tiện ích</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="keywords"
+        content="Python, HTML, CSS, Javascript, Image Classification, Tensorflow, Keras, SQL, PostgreSQL, SQL, ASP.NET Core MVC, .NET6, .NET7, Nguyen Kim Bao, Kim Bao, BaoIT, nguyen kim bao, kim bao, baoit">
+    <meta name="author" content="Nguyễn Kim Bảo (BaoIT)">
+    <meta property="og:title" content="Nguyễn Kim Bảo">
+    <meta property="og:description" content="Ứng dụng quản lý dự án của Nguyễn Kim Bảo">
+    <meta property="og:image" content="https://baoit.xyzassets/favicon/favicon-32x32.png">
+    <meta property="og:url" content="https://baoit.xyz">
+    <meta name="twitter:title" content="Nguyễn Kim Bảo">
+    <meta name="twitter:description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="twitter:url" content="https://baoit.xyz/assets/favicon/favicon-32x32.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="robots" content="nofollow">
+    <meta name="color-scheme" content="dark">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="/assets/css/style.min.css" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/css/twemoji-awesome.min.css" fetchpriority="high">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer" fetchpriority="high"></script>
+    <script src="/assets/js/common.js" fetchpriority="high"></script>
+</head>
+
+<body class="bg-white text-black antialiased dark:bg-black dark:text-white">
+    <!--NavBar-->
+    <nav></nav>
+    <div class="mx-auto max-w-3xl md:max-w-4xl xl:max-w-5xl  px-3 sm:px-6 xl:px-0">
+        <div class="flex flex-col justify-between">
+            <main style="min-height:calc(100vh - 69px - 188px)">
+                <div class="relative flex bg-gray-100 dark:bg-gray-950 rounded-2xl h-[90vh]">
+                    <button class="md:hidden p-2 absolute top-0 left-0 z-40 bg-gray-200 dark:bg-gray-600 rounded-lg">
+                        <i class="inline-block twa twa-lg twa-hammer-and-wrench"></i> Chọn tiện ích </button>
+                    <div
+                        class="absolute top-0 left-0 w-1/4 h-full bg-gray-200 dark:bg-gray-800 p-2 transition-transform duration-300 ease-in-out -translate-x-full z-30 md:static md:translate-x-0 rounded-lg overflow-auto">
+                        <div class="grid grid-cols-4 gap-3">
+                            <input type="text"
+                                class="col-span-3 py-1 px-2 border-2 border-gray-400 rounded-md focus:outline-none focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 text-black dark:text-white dark:placeholder-gray-400"
+                                placeholder="Tìm tiện ích...">
+                            <button type="button"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">0</button>
+                        </div>
+                        <hr class="border-gray-500 border-1 rounded mt-3">
+                        <ul class="mt-10 sm:mt-0 font-medium" data-accordion="collapse"
+                            data-active-classes="bg-gray-300 dark:bg-gray-700 text-black dark:text-white duration-300"
+                            data-inactive-classes="text-black dark:text-white duration-300">
+                            <li class="my-3">
+                                <a href="#" data-accordion-target="#qrCode_APP" aria-expanded="true"
+                                    class="flex items-center p-2 rounded-lg">
+                                    <img class="inline-block ml-0.5" src="assets/images/qr.svg" width="22" height="22">
+                                    <span class="text-sm ml-2">QR Code Generator</span>
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#" class="flex items-center p-2 rounded-lg ">
+                                    <img class="inline-block ml-0.5" src="assets/images/code-review.svg" width="22"
+                                        height="22">
+                                    <span class="text-sm ml-2">Base64 Encoder/Decoder</span>
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#" class="flex items-center p-2 rounded-lg ">
+                                    <img class="inline-block ml-0.5" src="assets/images/shuffle.svg" width="22"
+                                        height="22">
+                                    <span class="text-sm ml-2">Random String Generator</span>
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#" class="flex items-center p-2 rounded-lg ">
+                                    <img class="inline-block ml-0.5" src="assets/images/padlock.svg" width="22"
+                                        height="22">
+                                    <span class="text-sm ml-2">Password Generator</span>
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#" class="flex items-center p-2 rounded-lg ">
+                                    <img class="inline-block ml-0.5" src="assets/images/generative-image.svg" width="22"
+                                        height="22">
+                                    <span class="text-sm ml-2">IMG-to-PDF Converter</span>
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#" class="flex items-center p-2 rounded-lg ">
+                                    <img class="inline-block ml-0.5" src="assets/images/utf8.svg" width="22" height="22">
+                                    <span class="text-sm ml-2">UTF-8 Encoder/Decoder</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--QR APP-->
+                    <div class="flex-1 xl:px-5 mt-10 md:mt-0 overflow-y-auto" id="qrCode_APP">
+                        <form id="qrInput"
+                            class="border-2 border-orange-500 dark:border-orange-800 rounded-lg p-4 space-y-3">
+                            <div class="relative w-full">
+                                <textarea id="textarea_counter" rows="6"
+                                    class="block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Nội dung cần tạo..."></textarea>
+                                <span id="char_counter"
+                                    class="absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0 kí
+                                    tự</span>
+                            </div>
+                            <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
+                                <div class="col-span-2">
+                                    <label for="qrTieuDe"
+                                        class="block text-sm font-medium text-black dark:text-white">Tiêu đề</label>
+                                    <input type="text" name="qrTieuDe"
+                                        class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrTieuDeCon"
+                                        class="block text-sm font-medium text-black dark:text-white">Tiêu
+                                        đề con</label>
+                                    <input type="text" name="qrTieuDeCon"
+                                        class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrMauSac"
+                                        class="block text-sm font-medium text-black dark:text-white">Màu sắc</label>
+                                    <input type="color" name="qrMauSac" value="#000000"
+                                        class="mt-2 block p-5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrChenAnh"
+                                        class="block text-sm font-medium text-black dark:text-white">Chèn ảnh</label>
+                                    <input
+                                        class="block w-full mt-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        name="qrChenAnh" type="file">
+                                </div>
+                            </div>
+                        </form>
+                        <div id="qrOutput"
+                            class="hidden py-12 flex-col mt-4 border-2 border-red-400 bg-gray-100 dark:bg-gray-800 rounded-lg p-4 items-center justify-center">
+                            <div id="qrCode" class="pb-6"></div>
+                            <div id="qrDownload"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+<div id="page-scripts"></div>
+<script src="https://cdn.jsdelivr.net/npm/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>
+<script src="/assets/js/tien-ich.min.js"></script>
+
+</html>
