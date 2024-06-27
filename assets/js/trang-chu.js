@@ -34,7 +34,8 @@ function welcomePopper() {
 
 $(document).ready(async function () {
   // Nếu khách lần đầu truy cập thì hiện pháo hoa
-  localStorage.getItem("first_visit") === null
-    ? welcomePopper()
-    : localStorage.setItem("first_visit", false);
+  if (localStorage.getItem("first_visit") === null) {
+    localStorage.setItem("first_visit", false);
+    welcomePopper();
+  }
 });
