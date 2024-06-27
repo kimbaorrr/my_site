@@ -29,10 +29,10 @@ async function loadListDuAn() {
       Thử nghiệm
     </button>`;
     let item_sc = `
-      <a href="${item.sc_web_url}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">
-      ${item.category == "ai" ? "Web Deploy" : "GitHub"}</a>
+      <a href="${item.sc_web_url}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">${
+      item.sc_category === "ai" ? "Web" : "GitHub"}</a>
     `;
-    if (item.category == "ai") {
+    if (item.sc_category === "ai") {
       item_sc += `
         <a href="${item.sc_notebook_url}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">Notebook</a>
       `;
