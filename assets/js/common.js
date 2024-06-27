@@ -41,7 +41,7 @@ function loadNavBar() {
       </a>
       <div class="flex items-center gap-4">
         <!--Main Nav-->
-        <div class="hidden space-x-1.5 font-medium md:block md:w-auto w-full" id="Main_Nav">
+        <div class="hidden space-x-1.5 font-medium sm:block sm:w-auto w-full" id="Main_Nav">
           <a href="/">
             <span
               class="inline-block rounded px-3 py-1 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
