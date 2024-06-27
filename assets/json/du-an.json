@@ -57,20 +57,6 @@
   },
   {
     "id": 4,
-    "project_name": "Điểm Thi",
-    "project_url": "https://diemthi.baoit.xyz",
-    "description": "Tra cứu điểm thi THPT Quốc Gia, Tuyển sinh 10",
-    "ds_name": "Sở GDDT",
-    "ds_url": "https://diemthi.hcm.edu.vn/",
-    "fe": "Bootstrap 5, JQuery, ...",
-    "be": "N/A",
-    "type": "Cá nhân",
-    "status": true,
-    "viewer": 0,
-    "git": "https://github.com/kimbaorrr/tra_cuu_diem_thi"
-  },
-  {
-    "id": 5,
     "project_name": "Coco SSD",
     "project_url": "https://ai.baoit.xyz/coco_ssd",
     "description": "Triển khai mô hình nhận diện đối tượng Coco SSD trên nền Web",
@@ -84,7 +70,7 @@
     "git": "https://github.com/kimbaorrr/tfjs_ai"
   },
   {
-    "id": 6,
+    "id": 5,
     "project_name": "Zalo API",
     "project_url": "https://zalo-api.baoit.xyz",
     "description": "Giả lập hệ thống API của Zalo",
@@ -98,21 +84,7 @@
     "git": "https://github.com/kimbaorrr/Zalo_API"
   },
   {
-    "id": 8,
-    "project_name": "Simple Calculator",
-    "project_url": "https://cdn.baoit.xyz/apps/MayTinhCoBan.zip",
-    "description": "Ứng dụng máy tính cơ bản",
-    "ds_name": "N/A",
-    "ds_url": "#",
-    "fe": "N/A",
-    "be": ".NET 6, Windows Forms",
-    "type": "Cá nhân",
-    "status": true,
-    "viewer": 0,
-    "git": "https://github.com/kimbaorrr/MayTinhCoBan"
-  },
-  {
-    "id": 9,
+    "id": 6,
     "project_name": "IMG-to-PDF Converter",
     "project_url": "https://drive.google.com/file/d/1sUaygWL_OD09sKWx_Itiq27FD6C7CQFD/view?usp=drive_link",
     "description": "Ứng dụng chuyển đổi một (nhiều) ảnh sang định dạng PDF",
@@ -124,19 +96,5 @@
     "status": true,
     "viewer": 0,
     "git": "https://github.com/kimbaorrr/IMG-to-PDF-Converter"
-  },
-  {
-    "id": 10,
-    "project_name": "Flask MVC",
-    "project_url": "#",
-    "description": "Ứng dụng web quản lý dự án AI theo mô hình MVC",
-    "ds_name": "N/A",
-    "ds_url": "#",
-    "fe": "Bootstrap 5, JQuery, ...",
-    "be": "Flask",
-    "type": "Cá nhân",
-    "status": true,
-    "viewer": 0,
-    "git": "https://github.com/kimbaorrr/flask_mvc"
   }
 ]
