@@ -28,9 +28,18 @@ async function loadListDuAn() {
       }" ${item.project_url == "#" ? "disabled" : ""}>
       Thử nghiệm
     </button>`;
+    let item_sc = `
+      <a href="${item.sc_web_url}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">${
+      item.sc_category === "ai" ? "Web" : "GitHub"}</a>
+    `;
+    if (item.sc_category === "ai") {
+      item_sc += `
+        <a href="${item.sc_notebook_url}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">Notebook</a>
+      `;
+    }
     // Đặt element
     $("#listDuAn").append(`
-    <div class="bg-white dark:bg-gray-700 p-4 da da-${item_status} cursor-default da-id-${item.id}">
+    <div class="bg-white dark:bg-gray-700 p-4 da da-${item_status} cursor-default" data-da-id-${item.id}>
   <div class="flex justify-between items-baseline font-semibold text-xs text-black dark:text-white mt-1">
     <h4 class="text-xl">${item.project_name}</h4>
     <div class="flex mb-2">
@@ -62,7 +71,7 @@ async function loadListDuAn() {
     </div>
     <div class="flex">
       <span class="mt-2">Mã nguồn:</span>
-      <a href="${item.git}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">GitHub</a>
+      ${item_sc}
     </div>
     </div>
     

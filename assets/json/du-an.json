@@ -11,21 +11,25 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/tfjs_ai"
+    "sc_web_url": "https://github.com/kimbaorrr/tfjs_ai",
+    "sc_notebook_url": "#",
+    "category": "ai"
   },
   {
     "id": 1,
     "project_name": "Brain Tumor",
     "project_url": "https://ai.baoit.xyz/brain_tumor",
-    "description": "Mô hình dự đoán khối u não từ ảnh chụp MRI",
+    "description": "Mô hình phân đoạn khối u não từ ảnh chụp MRI",
     "ds_name": "Kaggle",
-    "ds_url": "https://kaggle.com",
+    "ds_url": "https://www.kaggle.com/datasets/awsaf49/brats2020-training-data/data",
     "fe": "Bootstrap 5, JQuery",
     "be": "NodeJS",
     "type": "Cá nhân",
     "status": false,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr"
+    "sc_web_url": "https://github.com/kimbaorrr",
+    "sc_notebook_url": "#",
+    "category": "ai"
   },
   {
     "id": 2,
@@ -39,7 +43,9 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/ShopABC"
+    "sc_web_url": "https://github.com/kimbaorrr/ShopABC",
+    "sc_notebook_url": "",
+    "category": ""
   },
   {
     "id": 3,
@@ -53,7 +59,9 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/Zalo"
+    "sc_web_url": "https://github.com/kimbaorrr/Zalo",
+    "sc_notebook_url": "",
+    "category": ""
   },
   {
     "id": 4,
@@ -67,7 +75,9 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/tfjs_ai"
+    "sc_web_url": "https://github.com/kimbaorrr/tfjs_ai",
+    "sc_notebook_url": "#",
+    "category": "ai"
   },
   {
     "id": 5,
@@ -81,7 +91,9 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/Zalo_API"
+    "sc_web_url": "https://github.com/kimbaorrr/Zalo_API",
+    "sc_notebook_url": "#",
+    "category": ""
   },
   {
     "id": 6,
@@ -95,6 +107,8 @@
     "type": "Cá nhân",
     "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/IMG-to-PDF-Converter"
+    "sc_web_url": "https://github.com/kimbaorrr/IMG-to-PDF-Converter",
+    "sc_notebook_url": "#",
+    "category": ""
   }
 ]

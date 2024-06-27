@@ -2604,10 +2604,6 @@ input:checked + .toggle-bg {
     margin-top: 4rem;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -2618,10 +2614,6 @@ input:checked + .toggle-bg {
 
   .md\:h-96 {
     height: 24rem;
-  }
-
-  .md\:w-auto {
-    width: auto;
   }
 
   .md\:max-w-4xl {
