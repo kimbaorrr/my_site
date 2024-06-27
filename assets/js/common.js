@@ -73,7 +73,7 @@ function loadNavBar() {
             </span>
           </a>
         </div>
-        <div class="hidden md:block">
+        <div class="hidden sm:block">
           <div class="flex items-center gap-1">
             <span class="mb-1 font-semibold text-gray-400 cursor-default">|</span>
           </div>
