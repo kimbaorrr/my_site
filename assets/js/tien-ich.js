@@ -12,7 +12,7 @@ function qrCodeGenerator() {
   let qrOutput = $("#qrCode_APP #qrOutput");
   let qrCode = qrOutput.find("#qrCode");
   let qrCanvas = qrOutput.find("canvas")[0];
-  let qrDownloadBtn = qrOutput.find("qrDownload");
+  let qrDownloadBtn = qrOutput.find("#qrDownload");
 
   // Dọn dẹp các QR cũ
   qrCode.empty();
