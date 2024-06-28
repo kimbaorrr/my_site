@@ -1,6 +1,6 @@
 var dsDuAn = undefined;
 
-async function getJSONDuAn() {
+async function getDuAn() {
   /**
    * Tải tệp JSON chứa thông tin các dự án
    */
@@ -9,11 +9,11 @@ async function getJSONDuAn() {
   });
 }
 
-async function loadListDuAn() {
+async function loadDuAn() {
   /**
    * Khởi tạo danh sách các dự án & đặt vào từng card trên DOM
    */
-  await getJSONDuAn();
+  await getDuAn();
   $.each(dsDuAn, function (idx, item) {
     // Đặt nhãn status
     let item_status = item.status ? "Done" : "Pending";
@@ -79,7 +79,7 @@ async function updateLuotTruyCap(id, redirect_url) {
   /**
    * Cập nhật lượt truy cập trên JSON khi click nút Thử nghiệm
    */
-  await getJSONDuAn();
+  await getDuAn();
   // Tăng lượt truy cập
   // $.each(dsDuAn, function (idx, item) {
   //   if (item.id === id) {
@@ -140,7 +140,7 @@ function hideAllDACard() {
 
 $(document).ready(function () {
   // Khởi tạo danh sách dự án & đặt vào card trên DOM
-  loadListDuAn();
+  loadDuAn();
 
   // Chức năng lọc theo trạng thái
   $("#daStatus button").click(function () {

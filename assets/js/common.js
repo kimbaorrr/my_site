@@ -300,7 +300,7 @@ function loadTheme() {
   color_theme === "dark" ? changeThemeMode("dark") : changeThemeMode("light");
 }
 
-async function getJSONInfo() {
+async function getInfo() {
   /**
    * Tải tệp JSON chứa thông tin cá nhân
    */
