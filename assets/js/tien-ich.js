@@ -62,6 +62,24 @@ function base64Converter(type, text) {
   return type == "encode" ? btoa(encodeURIComponent(text)) : atob(encodeURIComponent(text));
 }
 
+function utf8Converter(type, text) {
+  /**
+   * Chuyển đổi chuỗi thường sang utf8 & ngược lại
+   */
+  return type == "encode" ? encodeURIComponent(text) : decodeURIComponent(text);
+}
+
+function exportTXT(text, classes, this_selector) {
+  let selector = $(this_selector).find(".exportTXT");
+  let blob = new Blob([text], { type: 'text/plain' });
+  console.log(blob);
+  $('<a></a>')
+      .attr('href', window.URL.createObjectURL(blob))
+      .attr('download', 'downloaded-file.txt')
+      .addClass(classes)
+      .appendTo(selector);
+}
+
 $(document).ready(function () {
   $(".textarea_counter").on("keyup", function () {
     /**
@@ -92,6 +110,17 @@ $(document).ready(function () {
     let text = $("#base64Input textarea[name=base64NoiDung]").val();
     let output = base64Converter(type, text);
     $("#base64Output textarea").text(output);
+  });
+
+  $("#utf8_APP button").click(function () {
+    /**
+     * Nếu nhấn nút Encode/Decode thì chuyển đổi sang UTF-8 & xuất kết quả
+     */
+    let type = $(this).data("utf8-action");
+    let text = $("#utf8Input textarea[name=utf8NoiDung]").val();
+    let output = utf8Converter(type, text);
+    $("#utf8Output textarea").text(output);
+    exportTXT(output, "text-blue-600 dark:text-blue-500 hover:text-blue-800 hover:dark:text-blue-800 text-xs font-semibold", "#utf8Output");
   });
 
   $("#searchBar").find("input, button").on("keyup click", function () {
