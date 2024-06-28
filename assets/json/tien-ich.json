@@ -2,43 +2,43 @@
     {
         "id": 0,
         "name": "QR Code Generator",
-        "selector_id": "#qrcode_APP",
-        "icon": "assets/icon/qr.svg",
+        "selector_id": "#qrCode_APP",
+        "icon": "assets/images/qr.svg",
         "viewer": 0
     },
     {
         "id": 1,
         "name": "Base64 Encoder/Decoder",
         "selector_id": "#base64_APP",
-        "icon": "assets/icon/code-review.svg",
+        "icon": "assets/images/code-review.svg",
         "viewer": 0
     },
     {
         "id": 2,
         "name": "Random String Generator",
         "selector_id": "#randStrGen_APP",
-        "icon": "assets/icon/shuffle.svg",
+        "icon": "assets/images/shuffle.svg",
         "viewer": 0
     },
     {
         "id": 3,
         "name": "Password Generator",
         "selector_id": "#passwordGen_APP",
-        "icon": "assets/icon/padlock.svg",
+        "icon": "assets/images/padlock.svg",
         "viewer": 0
     },
     {
         "id": 4,
         "name": "IMG-to-PDF Converter",
         "selector_id": "#imgToPDF_APP",
-        "icon": "assets/icon/generative-image.svg",
+        "icon": "assets/images/generative-image.svg",
         "viewer": 0
     },
     {
         "id": 5,
         "name": "UTF-8 Encoder/Decoder",
         "selector_id": "#utf8_APP",
-        "icon": "assets/icon/utf8.svg",
+        "icon": "assets/images/utf8.svg",
         "viewer": 0
     }
 ]
