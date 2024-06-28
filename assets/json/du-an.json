@@ -31,7 +31,7 @@
     "id": 2,
     "project_name": "ShopABC",
     "project_url": "https://doanltw.baoit.xyz",
-    "description": "Hệ thống quản lý cửa hàng thời trang nam",
+    "description": "Giả lập hệ thống quản lý cửa hàng thời trang nam",
     "ds_name": "N/A",
     "ds_url": "#",
     "fe": "Bootstrap 4, JQuery, ...",
