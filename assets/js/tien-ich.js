@@ -55,26 +55,60 @@ function qrCodeGenerator() {
   downloadQRBtn();
 }
 
+function base64Converter(type, text) {
+  /**
+   * Chuyển đổi chuỗi thường sang base64 & ngược lại
+   */
+  return type == "encode" ? btoa(encodeURIComponent(text)) : atob(encodeURIComponent(text));
+}
+
 $(document).ready(function () {
-  $("#textarea_counter").on("keyup", function () {
+  $(".textarea_counter").on("keyup", function () {
     /**
      * Đếm số kí tự có trong textarea mỗi khi nhấn phím
      */
-    let charCounter = `${$("#textarea_counter").val().length} kí tự`;
-    $("#char_counter").text(charCounter);
+    let charCounter = `${$(this).val().length} kí tự`;
+    $(this).parent().find("span").text(charCounter);
   });
-  $(
-    "#qrInput textarea, input[name=qrTieuDe], input[name=qrTieuDeCon], input[name=qrMauSac], input[name=qrChenAnh]"
-  ).on("keyup change", function () {
+  
+  $('#qrCode_APP #qrInput').find('input, textarea').on("keyup change", function () {
     /**
      * Nếu có thay đổi ở các trường thì tạo QR mới
      */
-    let qrNoiDung = $("#qrInput textarea");
+    let qrNoiDung = $("textarea[name=qrNoiDung]");
     if (qrNoiDung.val().length > 0) {
       $("#qrOutput").css("display", "flex");
       qrCodeGenerator();
     } else {
       $("#qrOutput").hide();
     }
+  });
+
+  $("#base64_APP button").click(function () {
+    /**
+     * Nếu nhấn nút Encode/Decode thì chuyển đổi sang Base64 & xuất kết quả
+     */
+    let type = $(this).data("base64-action");
+    let text = $("#base64Input textarea[name=base64NoiDung]").val();
+    let output = base64Converter(type, text);
+    $("#base64Output textarea").text(output);
+  });
+
+  $("#searchBar").find("input, button").on("keyup click", function () {
+    /**
+     * Chức năng tìm tiện ích
+     */
+    let searchText = $(this).parent().find("input").val().toLowerCase().trim();
+    let counter = 0;
+    $("#sidebarTienIch li").each(function () {
+      let tiTitle = $(this).find("span").text().toLowerCase();
+      if(tiTitle.includes(searchText)) {
+        counter++;
+        $(this).show()
+      } else {
+        $(this).hide();
+      } 
+    });
+    $("#searchBar button").text(counter);
   });
 });
