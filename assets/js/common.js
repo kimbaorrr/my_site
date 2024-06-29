@@ -322,14 +322,14 @@ $(document).ready(function () {
   loadScripts();
 
   // Load Image over CDN
-  if (window.location.hostname !== "127.0.0.1") {
-    $("img").each(function () {
-      let original = $(this).attr("src");
-      if (original.startsWith("/assets/images")) {
-        $(this).attr("src", `https://jsdelivr.b-cdn.net/gh/kimbaorrr/my_site@main${original}`);
-      }    
-    });
-  }
+  // if (window.location.hostname !== "127.0.0.1") {
+  //   $("img").each(function () {
+  //     let original = $(this).attr("src");
+  //     if (original.startsWith("/assets/images")) {
+  //       $(this).attr("src", `https://jsdelivr.b-cdn.net/gh/kimbaorrr/my_site@main${original}`);
+  //     }    
+  //   });
+  // }
 
   // Hiện Clock trên NavBar
   clock();
