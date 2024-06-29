@@ -325,7 +325,7 @@ $(document).ready(function () {
   if (window.location.hostname !== "127.0.0.1") {
     $("img").each(function () {
       let original = $(this).attr("src");
-      if (original.includes("assets/images")) {
+      if (original.startsWith("/assets/images")) {
         $(this).attr("src", `https://jsdelivr.b-cdn.net/gh/kimbaorrr/my_site@main${original}`);
       }    
     });
