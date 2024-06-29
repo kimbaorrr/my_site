@@ -96,5 +96,19 @@
     "status": true,
     "viewer": 0,
     "git": "https://github.com/kimbaorrr/IMG-to-PDF-Converter"
+  },
+  {
+    "id": 7,
+    "project_name": "People Counting",
+    "project_url": "#",
+    "description": "Ứng dụng Yolov8 kết hợp thuật toán Centroid Tracker trong đếm người ra vào cửa hàng",
+    "ds_name": "N/A",
+    "ds_url": "#",
+    "fe": "N/A",
+    "be": "Python, OpenCV",
+    "type": "Nhóm",
+    "status": true,
+    "viewer": 0,
+    "git": "https://github.com/kimbaorrr/people_counter"
   }
 ]
