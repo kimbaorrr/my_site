@@ -321,6 +321,16 @@ $(document).ready(function () {
   // Khởi tạo Scripts tag
   loadScripts();
 
+  // Load Image over CDN
+  if (window.location.hostname !== "127.0.0.1") {
+    $("img").each(function () {
+      let original = $(this).attr("src");
+      if (original.includes("assets/images")) {
+        $(this).attr("src", `https://jsdelivr.b-cdn.net/gh/kimbaorrr/my_site@main${original}`);
+      }    
+    });
+  }
+
   // Hiện Clock trên NavBar
   clock();
 
