@@ -19,15 +19,15 @@
     "project_name": "Brain Tumor Classification",
     "project_url": "https://ai.baoit.xyz/brain_tumor_classification",
     "description": "Xây dựng, đào tạo & triển khai mô hình phân loại u não trên nền Web",
-    "ds_name": "Kaggle",
-    "ds_url": "https://kaggle.com",
+    "ds_name": "Brain Tumor Classification MRI",
+    "ds_url": "https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri",
     "fe": "Tailwind CSS, Javascript",
     "be": "Flask",
     "db": "N/A",
     "type": "Cá nhân",
     "status": false,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr"
+    "git": "https://github.com/kimbaorrr/brain_tumor_classification"
   },
   {
     "id": 2,
@@ -132,6 +132,6 @@
     "type": "Cá nhân",
     "status": false,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr"
+    "git": "https://github.com/kimbaorrr/covid_segmentation"
   }
 ]
