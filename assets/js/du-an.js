@@ -49,12 +49,20 @@ async function loadDuAn() {
       <a href="${item.ds_url}" class="text-blue-800 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400">${item.ds_name}</a>
     </div>
     <div class="flex">
-      <span class="mt-2">FE:</span>
+      <span class="mt-2">Frontend:</span>
       <span class="mt-2 ml-1 font-semibold">${item.fe}</span>
     </div>
     <div class="flex">
-      <span class="mt-2">BE:</span>
+      <span class="mt-2">Backend:</span>
       <span class="mt-2 ml-1 font-semibold">${item.be}</span>
+    </div>
+    <div class="flex">
+      <span class="mt-2">Database:</span>
+      <span class="mt-2 ml-1 font-semibold">${item.db}</span>
+    </div>
+    <div class="flex">
+      <span class="mt-2">Libraries:</span>
+      <span class="mt-2 ml-1 font-semibold">${item.lib}</span>
     </div>
     <div class="flex">
       <span class="mt-2">Loại dự án:</span>
