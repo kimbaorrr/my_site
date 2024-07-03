@@ -81,7 +81,7 @@ function loadNavBar() {
         <!-- Clock -->
         <div id="subNavClock" class="p-1.5 font-medium cursor-default"></div>
         <!-- Toggle Menu -->
-        <button data-collapse-toggle="mobileNav" type="button" aria-label="Toggle Menu" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+        <button data-collapse-toggle="mobileNav" type="button" aria-label="Toggle Menu" class="md:hidden p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
           <svg width="20" height="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
