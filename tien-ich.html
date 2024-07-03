@@ -41,12 +41,13 @@
     <nav></nav>
     <div class="mx-auto max-w-3xl md:max-w-4xl xl:max-w-5xl  px-3 sm:px-6 xl:px-0">
         <div class="flex flex-col justify-between">
-            <main style="min-height:calc(100vh - 69px - 188px)">
+            <main class="min-h-[calc(100vh-69px-188px)]">
                 <div class="relative flex bg-gray-100 dark:bg-gray-950 rounded-2xl h-[90vh]">
                     <button class="md:hidden p-2 absolute top-0 left-0 z-40 bg-gray-200 dark:bg-gray-600 rounded-lg">
                         <i class="inline-block twa twa-lg twa-hammer-and-wrench"></i> Chọn tiện ích </button>
+                        
                     <div
-                        class="absolute top-0 left-0 w-1/4 h-full bg-gray-200 dark:bg-gray-800 p-2 transition-transform duration-300 ease-in-out -translate-x-full z-30 md:static md:translate-x-0 rounded-lg overflow-auto">
+                        class="absolute top-0 left-0 w-1/4 h-full bg-gray-200 dark:bg-gray-800 p-2 transition-transform duration-300 ease-in-out -translate-x-full z-30 md:static md:translate-x-0 rounded-lg overflow-auto" id="sidebarTienIch">
                         <div class="grid grid-cols-4 gap-3" id="searchBar">
                             <input type="text"
                                 class="col-span-3 py-1 px-2 border-2 border-gray-400 rounded-md focus:outline-none focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 text-black dark:text-white dark:placeholder-gray-400"
@@ -89,14 +90,13 @@
                             </li>
                             <li class="my-3">
                                 <a href="#" class="flex items-center p-2 rounded-lg ">
-                                    <img class="inline-block ml-0.5" src="/assets/images/generative-image.svg" width="22"
-                                        height="22">
+                                    <img class="inline-block ml-0.5" src="/assets/images/generative-image.svg"
+                                        width="22" height="22">
                                     <span class="text-sm ml-2">IMG-to-PDF Converter</span>
                                 </a>
                             </li>
                             <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg "
-                                data-accordion-target="#utf8_APP">
+                                <a href="#" class="flex items-center p-2 rounded-lg " data-accordion-target="#utf8_APP">
                                     <img class="inline-block ml-0.5" src="/assets/images/utf8.svg" width="22"
                                         height="22">
                                     <span class="text-sm ml-2">UTF-8 Encoder/Decoder</span>
@@ -120,7 +120,8 @@
                                     class="textarea_counter block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Nội dung cần tạo QR..."></textarea>
                                 <span
-                                    class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0 kí
+                                    class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0
+                                    kí
                                     tự</span>
                             </div>
                             <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
@@ -166,20 +167,23 @@
                                 <textarea rows="6" name="base64NoiDung"
                                     class="textarea_counter block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Nội dung cần Encode/Decode..."></textarea>
-                                <span class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0 kí tự</span>
+                                <span
+                                    class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0
+                                    kí tự</span>
                             </div>
                             <div class="flex items-center justify-center space-x-4">
                                 <button type="button" data-base64-action="encode"
                                     class="px-4 py-2 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 text-white rounded-lg dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 text-sm font-semibold">Encode</button>
                                 <button type="button" data-base64-action="decode"
-                                class="px-4 py-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 text-white rounded-lg dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-sm font-semibold">Decode</button>
+                                    class="px-4 py-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 text-white rounded-lg dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-sm font-semibold">Decode</button>
                             </div>
                         </div>
                         <div id="base64Output"
                             class="py-8 flex-col mt-4 border-2 border-red-400 bg-gray-100 dark:bg-gray-800 rounded-lg p-4 items-center justify-center">
                             <span class="font-bold text-lg">Base64 Output ✍️</span>
                             <textarea rows="8"
-                            class="mt-2 block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" readonly></textarea>
+                                class="mt-2 block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                readonly></textarea>
                         </div>
                     </div>
                     <!--UTF8 APP-->
@@ -190,13 +194,15 @@
                                 <textarea rows="6" name="utf8NoiDung"
                                     class="textarea_counter block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Nội dung cần Encode/Decode..."></textarea>
-                                <span class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0 kí tự</span>
+                                <span
+                                    class="char_counter absolute bottom-0 right-2.5 p-2.5 font-bold text-sm text-gray-500">0
+                                    kí tự</span>
                             </div>
                             <div class="flex items-center justify-center space-x-4">
                                 <button type="button" data-utf8-action="encode"
                                     class="px-4 py-2 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 text-white rounded-lg dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 text-sm font-semibold">Encode</button>
                                 <button type="button" data-utf8-action="decode"
-                                class="px-4 py-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 text-white rounded-lg dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-sm font-semibold">Decode</button>
+                                    class="px-4 py-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 text-white rounded-lg dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 text-sm font-semibold">Decode</button>
                             </div>
                         </div>
                         <div id="utf8Output"
@@ -206,7 +212,8 @@
                                 <div class="exportTXT"></div>
                             </div>
                             <textarea rows="8"
-                            class="mt-2 block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" readonly></textarea>
+                                class="mt-2 block p-2.5 pb-8 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                readonly></textarea>
                         </div>
                     </div>
                 </div>
