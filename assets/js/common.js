@@ -217,8 +217,8 @@ function loadScripts() {
    */
   // Thêm danh sách nguồn tệp js
   let js_src = [
-    "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js",
-    "https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js",
+    "https://jsdelivr.b-cdn.net/npm/flowbite@2.4.1/dist/flowbite.min.js",
+    "https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js",
   ];
   // Lặp qua từng phần tử trong mảng & thêm chúng lên DOM
   $.each(js_src, function (idx, val) {
