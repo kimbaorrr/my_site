@@ -30,7 +30,7 @@ function loadNavBar() {
     <!-- Left Nav --> 
     <a href="/" class="flex items-center">
       <img alt="Logo" src="/assets/images/logo.svg" loading="lazy" width="50" height="45" decoding="async" class="mr-3 rounded-full transition duration-300 hover:blur-[2px]" />
-      <p class="text-lg font-bold text-black dark:text-white">BaoIT Blog</p>
+      <p class="hidden md:block text-lg font-bold text-black dark:text-white">BaoIT Blog</p>
     </a>
     <!-- Right Nav --> 
     <div class="flex items-center gap-4">
