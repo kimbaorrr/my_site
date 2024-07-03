@@ -72,7 +72,7 @@ function loadNavBar() {
           </svg>
         </button>
         <!-- Change Language -->
-        <button type="button" id="btnLang" aria-label="Change Language" class="py-4 px-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+        <button type="button" id="btnLang" aria-label="Change Language" class="p-4 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
           <div class="flex justify-center items-center">
             <img alt="VN_Flag" src="https://upload.wikimedia.org/wikipedia/commons/0/07/Flag_of_Vietnam-Animated.gif" loading="lazy" width="22" height="22" class="absolute">
             <img alt="US_Flag" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Animated-Flag-USA.gif" loading="lazy" width="22" height="22" class="hidden absolute">
@@ -81,8 +81,8 @@ function loadNavBar() {
         <!-- Clock -->
         <div id="subNavClock" class="p-1.5 font-medium cursor-default"></div>
         <!-- Toggle Menu -->
-        <button data-collapse-toggle="mobileNav" type="button" aria-label="Toggle Menu" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <button data-collapse-toggle="mobileNav" type="button" aria-label="Toggle Menu" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+          <svg width="20" height="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
         </button>
