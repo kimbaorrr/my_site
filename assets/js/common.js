@@ -92,7 +92,7 @@ function loadNavBar() {
 </nav>
 <!-- Mobile Nav -->
 <nav class="hidden" id="mobileNav">
-<div class="flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95">
+<div class="fixed right-0 flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50">
   <a href="/" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Trang chủ</a>
   <a href="/du-an.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Dự án</a>
   <a href="/tien-ich.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Tiện ích</a>
@@ -293,7 +293,7 @@ $(document).ready(function () {
       : changeThemeMode("dark");
   });
 
-  $("#menuNav a").each(function () {
+  $("#menuNav a, #mobileNav a").each(function () {
     /**
      * Đổi màu nền nút Active trên NavBar
      */

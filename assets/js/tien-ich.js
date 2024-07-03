@@ -123,6 +123,15 @@ $(document).ready(function () {
     exportTXT(output, "text-blue-600 dark:text-blue-500 hover:text-blue-800 hover:dark:text-blue-800 text-xs font-semibold", "#utf8Output");
   });
 
+  $("#btnChonTienIch").click(function () {
+    let sidebarTienIch = $("#sidebarTienIch");
+    let btnChonTienIch = $(this);
+  
+    sidebarTienIch.toggleClass("left-[248px] w-64 left-0 w-1/4");
+    btnChonTienIch.toggleClass("right-0 left-0");
+  });
+  
+
   $("#searchBar").find("input, button").on("keyup click", function () {
     /**
      * Chức năng tìm tiện ích
