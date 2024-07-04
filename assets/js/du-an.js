@@ -62,7 +62,7 @@ async function loadDuAn() {
     </div>
     <div class="flex">
       <span class="mt-2">Mã nguồn:</span>
-      <a href="${item.git}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400"  target="_blank">GitHub</a>
+      <a href="${item.git}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400" target="_blank">GitHub</a>
     </div>
     </div>
     
