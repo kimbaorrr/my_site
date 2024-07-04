@@ -92,14 +92,15 @@ function loadNavBar() {
 </nav>
 <!-- Mobile Nav -->
 <nav class="hidden" id="mobileNav">
-<div class="fixed right-2 flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50">
-  <a href="/" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Trang chủ</a>
-  <a href="/du-an.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Dự án</a>
-  <a href="/tien-ich.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Tiện ích</a>
-  <a href="/ly-lich.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Lý lịch</a>
-  <a href="/lien-he.html" class="block px-3 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Liên hệ</a>
-</div>
+  <div class="fixed right-2 flex flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 justify-center items-center">
+    <a href="/" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Trang chủ</a>
+    <a href="/du-an.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Dự án</a>
+    <a href="/tien-ich.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Tiện ích</a>
+    <a href="/ly-lich.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Lý lịch</a>
+    <a href="/lien-he.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Liên hệ</a>
+  </div>
 </nav>
+
   `);
 }
 

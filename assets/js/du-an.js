@@ -109,9 +109,11 @@ function hideAllDACard() {
   /**
    * Ẩn tất cả thẻ dự án
    */
-  $("#daStatus button").removeClass(
-    "border-b-4 border-green-500 border-red-500 border-blue-500"
+  let daBtn = $("#daStatus button");
+  daBtn.removeClass(
+    "border-green-500 border-red-500 border-blue-500"
   );
+  daBtn.addClass("border-gray-300 dark:border-gray-500");
   $("#listDuAn .da").hide();
 }
 
@@ -151,17 +153,21 @@ $(document).ready(function () {
     hideAllDACard();
     let da_status_val = $(this).data("da-status");
     let listDuAn = $("#listDuAn");
+    let removeGrayBorder = $(this).removeClass("border-gray-300 dark:border-gray-500");
     switch (da_status_val) {
       case "all":
-        $(this).addClass("border-b-4 border-blue-500");
+        removeGrayBorder;
+        $(this).addClass("border-blue-500");
         listDuAn.find(".da").show();
         break;
       case "pending":
-        $(this).addClass("border-b-4 border-red-500");
+        removeGrayBorder;
+        $(this).addClass("border-red-500");
         listDuAn.find(".da-Pending").show();
         break;
       case "done":
-        $(this).addClass("border-b-4 border-green-500");
+        removeGrayBorder;
+        $(this).addClass("border-green-500");
         listDuAn.find(".da-Done").show();
         break;
       default:
