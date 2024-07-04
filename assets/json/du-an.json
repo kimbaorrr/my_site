@@ -135,8 +135,8 @@
     "fe": "Flutter",
     "be": "Firebase",
     "type": "Cá nhân",
-    "status": false,
+    "status": true,
     "viewer": 0,
-    "git": "https://github.com/kimbaorrr/covid_segmentation"
+    "git": "https://github.com/kimbaorrr/zalo_mobile"
   }
 ]
