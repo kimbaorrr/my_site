@@ -57,10 +57,6 @@ async function loadDuAn() {
       <span class="mt-2 ml-1 font-semibold">${item.be}</span>
     </div>
     <div class="flex">
-      <span class="mt-2">DB:</span>
-      <span class="mt-2 ml-1 font-semibold">${item.db}</span>
-    </div>
-    <div class="flex">
       <span class="mt-2">Loại dự án:</span>
       <span class="mt-2 ml-1 font-semibold">${item.type}</span>
     </div>

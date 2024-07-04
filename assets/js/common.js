@@ -300,6 +300,9 @@ $(document).ready(function () {
      */
     if ($(this).attr("href") === window.location.pathname) {
       $(this).addClass("bg-gray-300 dark:bg-red-500");
+      $(this).on("click", function (e) {
+        e.preventDefault();
+      });
     }
   });
 
