@@ -2,11 +2,11 @@
   {
     "id": 0,
     "project_name": "MobileNet V1",
-    "project_url": "https://ai.baoit.xyz/mobilenet_v1",
+    "project_url": "https://ai.baoit.xyz/classification?model_type=classification&project_id=0",
     "description": "Triển khai mô hình phân loại hình ảnh MobileNet V1 trên nền Web",
     "ds_name": "ILSVRC 2012",
     "ds_url": "https://www.kaggle.com/c/imagenet-object-localization-challenge",
-    "fe": "Bootstrap 5, Javascript",
+    "fe": "TailwindCSS, Javascript",
     "be": "NodeJS",
     "type": "Cá nhân",
     "status": true,
