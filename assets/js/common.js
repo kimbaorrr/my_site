@@ -212,22 +212,22 @@ function defaultLanguage() {
   }
 }
 
-function loadScripts() {
-  /**
-   * Tải các script chung giữa các trang
-   */
-  // Thêm danh sách nguồn tệp js
-  let js_src = [
-    "https://jsdelivr.b-cdn.net/npm/flowbite@2.4.1/dist/flowbite.min.js",
-    "https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js",
-  ];
-  // Lặp qua từng phần tử trong mảng & thêm chúng lên DOM
-  $.each(js_src, function (idx, val) {
-    $("#page-scripts").append(`
-      <script src="${val}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    `);
-  });
-}
+// function loadScripts() {
+//   /**
+//    * Tải các script chung giữa các trang
+//    */
+//   // Thêm danh sách nguồn tệp js
+//   let js_src = [
+//     "https://jsdelivr.b-cdn.net/npm/flowbite@2.4.1/dist/flowbite.min.js",
+//     "https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js",
+//   ];
+//   // Lặp qua từng phần tử trong mảng & thêm chúng lên DOM
+//   $.each(js_src, function (idx, val) {
+//     $("#page-scripts").append(`
+//       <script src="${val}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+//     `);
+//   });
+// }
 
 function loadTheme() {
   /**
