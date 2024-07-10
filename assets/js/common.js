@@ -264,7 +264,7 @@ $(document).ready(function () {
   $("li #thisYear").text(today.getFullYear().toString());
 
   // Khởi tạo Scripts tag
-  loadScripts();
+  // loadScripts();
 
   // Load Image over CDN
   // if (window.location.hostname !== "127.0.0.1") {
