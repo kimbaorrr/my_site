@@ -3,16 +3,16 @@ function qrCodeGenerator() {
    * QR Code Generator
    */
   // Chọn phần tử trên DOM
-  let qrInput = $("#qrCode_APP #qrInput");
-  let qrNoiDung = qrInput.find("textarea");
-  let qrTieuDe = qrInput.find("input[name=qrTieuDe]");
-  let qrTieuDeCon = qrInput.find("input[name=qrTieuDeCon]");
-  let qrMauSac = qrInput.find("input[name=qrMauSac]");
+  const qrInput = $("#qrCode_APP #qrInput");
+  const qrNoiDung = qrInput.find("textarea");
+  const qrTieuDe = qrInput.find("input[name=qrTieuDe]");
+  const qrTieuDeCon = qrInput.find("input[name=qrTieuDeCon]");
+  const qrMauSac = qrInput.find("input[name=qrMauSac]");
 
-  let qrOutput = $("#qrCode_APP #qrOutput");
-  let qrCode = qrOutput.find("#qrCode");
-  let qrCanvas = qrOutput.find("canvas")[0];
-  let qrDownloadBtn = qrOutput.find("#qrDownload");
+  const qrOutput = $("#qrCode_APP #qrOutput");
+  const qrCode = qrOutput.find("#qrCode");
+  const qrCanvas = qrOutput.find("canvas")[0];
+  const qrDownloadBtn = qrOutput.find("#qrDownload");
 
   // Dọn dẹp các QR cũ
   qrCode.empty();
@@ -41,7 +41,7 @@ function qrCodeGenerator() {
     /**
      * Hiện nút tải QR sau khi tạo xong QR
      */
-    let canvasDataUrl = qrCanvas.toDataURL("image/png");
+    const canvasDataUrl = qrCanvas.toDataURL("image/png");
     $("<a>")
       .attr("href", canvasDataUrl)
       .attr("download", "qr.png")
@@ -70,8 +70,8 @@ function utf8Converter(type, text) {
 }
 
 function exportTXT(text, classes, this_selector) {
-  let selector = $(this_selector).find(".exportTXT");
-  let blob = new Blob([text], { type: 'text/plain' });
+  const selector = $(this_selector).find(".exportTXT");
+  const blob = new Blob([text], { type: 'text/plain' });
   console.log(blob);
   $('<a></a>')
       .attr('href', window.URL.createObjectURL(blob))
@@ -85,7 +85,7 @@ $(document).ready(function () {
     /**
      * Đếm số kí tự có trong textarea mỗi khi nhấn phím
      */
-    let charCounter = `${$(this).val().length} kí tự`;
+    const charCounter = `${$(this).val().length} kí tự`;
     $(this).parent().find("span").text(charCounter);
   });
   
@@ -93,7 +93,7 @@ $(document).ready(function () {
     /**
      * Nếu có thay đổi ở các trường thì tạo QR mới
      */
-    let qrNoiDung = $("textarea[name=qrNoiDung]");
+    const qrNoiDung = $("textarea[name=qrNoiDung]");
     if (qrNoiDung.val().length > 0) {
       $("#qrOutput").css("display", "flex");
       qrCodeGenerator();
@@ -106,9 +106,9 @@ $(document).ready(function () {
     /**
      * Nếu nhấn nút Encode/Decode thì chuyển đổi sang Base64 & xuất kết quả
      */
-    let type = $(this).data("base64-action");
-    let text = $("#base64Input textarea[name=base64NoiDung]").val();
-    let output = base64Converter(type, text);
+    const type = $(this).data("base64-action");
+    const text = $("#base64Input textarea[name=base64NoiDung]").val();
+    const output = base64Converter(type, text);
     $("#base64Output textarea").text(output);
   });
 
@@ -116,16 +116,16 @@ $(document).ready(function () {
     /**
      * Nếu nhấn nút Encode/Decode thì chuyển đổi sang UTF-8 & xuất kết quả
      */
-    let type = $(this).data("utf8-action");
-    let text = $("#utf8Input textarea[name=utf8NoiDung]").val();
-    let output = utf8Converter(type, text);
+    const type = $(this).data("utf8-action");
+    const text = $("#utf8Input textarea[name=utf8NoiDung]").val();
+    const output = utf8Converter(type, text);
     $("#utf8Output textarea").text(output);
     exportTXT(output, "text-blue-600 dark:text-blue-500 hover:text-blue-800 hover:dark:text-blue-800 text-xs font-semibold", "#utf8Output");
   });
 
   $("#btnChonTienIch").click(function () {
-    let sidebarTienIch = $("#sidebarTienIch");
-    let btnChonTienIch = $(this);
+    const sidebarTienIch = $("#sidebarTienIch");
+    const btnChonTienIch = $(this);
   
     sidebarTienIch.toggleClass("left-[248px] w-64 left-0 w-1/4");
     btnChonTienIch.toggleClass("right-0 left-0");
@@ -136,10 +136,10 @@ $(document).ready(function () {
     /**
      * Chức năng tìm tiện ích
      */
-    let searchText = $(this).parent().find("input").val().toLowerCase().trim();
-    let counter = 0;
+    const searchText = $(this).parent().find("input").val().toLowerCase().trim();
+    const counter = 0;
     $("#sidebarTienIch li").each(function () {
-      let tiTitle = $(this).find("span").text().toLowerCase();
+      const tiTitle = $(this).find("span").text().toLowerCase();
       if(tiTitle.includes(searchText)) {
         counter++;
         $(this).show()

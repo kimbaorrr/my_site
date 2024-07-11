@@ -3,10 +3,27 @@ function clock() {
   /**
    * Sub Nav Clock
    */
-  let h = today.getHours().toString().padStart(2, "0");
-  let m = today.getMinutes().toString().padStart(2, "0");
+  const h = today.getHours().toString().padStart(2, "0");
+  const m = today.getMinutes().toString().padStart(2, "0");
   $("#subNavClock").text(h + ":" + m);
   setTimeout(clock, 1000);
+}
+
+function getFromStorage(item) {
+  /**
+   * Lấy item từ kho lưu trữ của Client
+   * @param {string} item Tên biến
+   */
+  return localStorage.getItem(item);
+}
+
+function setToStorage(item, value) {
+  /**
+   * Ghi item vào kho lưu trữ của Client
+   * @param {string} item Tên biến
+   * @param {string} value Giá trị
+   */
+  localStorage.setItem(item, value);
 }
 
 function backToTop() {
@@ -14,7 +31,7 @@ function backToTop() {
    * Hiện nút Back to Top khi scroll down & ngược lại
    */
   $(window).scroll(function () {
-    let btnBTT = $("#btnBackToTop");
+    const btnBTT = $("#btnBackToTop");
     $(this).scrollTop() > 100 ? btnBTT.fadeIn() : btnBTT.fadeOut();
   });
 }
@@ -165,21 +182,23 @@ function loadFooter() {
 function changeThemeMode(mode) {
   /**
    * Chuyển đỏi giao diện sáng/tối
+   * @param {string} mode Chế độ 
    */
+  const change_color = $("#changeColorTheme");
   switch (mode) {
     case "dark":
       $("meta[name=color-scheme]").attr("content", "dark");
       document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-      $("#changeColorTheme .lucide-moon").show();
-      $("#changeColorTheme .lucide-sun").hide();
+      setToStorage("color-theme", "dark");
+      change_color.find(".lucide-moon").show();
+      change_color.find(".lucide-sun").hide();
       break;
     case "light":
       $("meta[name=color-scheme]").attr("content", "light");
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-      $("#changeColorTheme .lucide-moon").hide();
-      $("#changeColorTheme .lucide-sun").show();
+      setToStorage("color-theme", "light");
+      change_color.find(".lucide-moon").hide();
+      change_color.find(".lucide-sun").show();
       break;
     default:
       break;
@@ -190,67 +209,39 @@ function defaultLanguage() {
   /**
    * Thiết đặt ngôn ngữ mặc định
    */
-  let lang = localStorage.getItem("lang");
-  let vnFlag = $("img[alt=VN_Flag]");
-  let usFlag = $("img[alt=US_Flag]");
+  const lang = getFromStorage("lang");
+  const vnFlag = $("img[alt=VN_Flag]");
+  const usFlag = $("img[alt=US_Flag]");
   switch (lang) {
     case "VN":
       vnFlag.show();
       usFlag.hide();
-      localStorage.setItem("lang", "VN");
+      setToStorage("lang", "VN");
       break;
     case "US":
       vnFlag.hide();
       usFlag.show();
-      localStorage.setItem("lang", "US");
+      setToStorage("lang", "US");
       break;
     default:
       vnFlag.show();
       usFlag.hide();
-      localStorage.setItem("lang", "VN");
+      setToStorage("lang", "VN");
       break;
   }
 }
-
-// function loadScripts() {
-//   /**
-//    * Tải các script chung giữa các trang
-//    */
-//   // Thêm danh sách nguồn tệp js
-//   let js_src = [
-//     "https://jsdelivr.b-cdn.net/npm/flowbite@2.4.1/dist/flowbite.min.js",
-//     "https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js",
-//   ];
-//   // Lặp qua từng phần tử trong mảng & thêm chúng lên DOM
-//   $.each(js_src, function (idx, val) {
-//     $("#page-scripts").append(`
-//       <script src="${val}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-//     `);
-//   });
-// }
 
 function loadTheme() {
   /**
    * Thiết đặt theme mặc định
    */
-  let color_theme = localStorage.getItem("color-theme");
+  const color_theme = localStorage.getItem("color-theme");
   // Nếu chưa có item color-theme ở localStorage thì default val là light
   if (color_theme === null) {
-    localStorage.setItem("color-theme", "light");
+    setToStorage("color-theme", "light");
   }
   // Nếu giá trị là dark thì chạy dark mode function & ngược lại
   color_theme === "dark" ? changeThemeMode("dark") : changeThemeMode("light");
-}
-
-async function getInfo() {
-  /**
-   * Tải tệp JSON chứa thông tin cá nhân
-   */
-  let dsInfo = undefined;
-  await $.getJSON("/assets/json/info.json", function (data) {
-    dsInfo = data;
-  });
-  return dsInfo;
 }
 
 $(document).ready(function () {
@@ -259,9 +250,6 @@ $(document).ready(function () {
 
   // Khởi tạo phần tử Footer
   loadFooter();
-
-  // Gán giá trị This year
-  $("li #thisYear").text(today.getFullYear().toString());
 
   // Khởi tạo Scripts tag
   // loadScripts();
@@ -325,17 +313,17 @@ $(document).ready(function () {
     /**
      * Sự kiện nhấn nút Flag để đổi ngôn ngữ
      */
-    let lang = localStorage.getItem("lang");
-    let us_flag = $("img[alt=US_Flag]");
-    let vn_flag = $("img[alt=VN_Flag]");
+    const lang = getFromStorage("lang");
+    const us_flag = $("img[alt=US_Flag]");
+    const vn_flag = $("img[alt=VN_Flag]");
     switch (lang) {
       case "VN":
-        localStorage.setItem("lang", "US");
+        setToStorage("lang", "US");
         us_flag.fadeIn();
         vn_flag.fadeOut();
         break;
       case "US":
-        localStorage.setItem("lang", "VN");
+        setToStorage("lang", "VN");
         us_flag.fadeOut();
         vn_flag.fadeIn();
         break;

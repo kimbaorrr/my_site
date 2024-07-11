@@ -32,10 +32,10 @@ function welcomePopper() {
   }, 250);
 }
 
-$(document).ready(async function () {
+$(document).ready(function () {
   // Nếu khách lần đầu truy cập thì hiện pháo hoa
-  if (localStorage.getItem("first_visit") === null) {
-    localStorage.setItem("first_visit", false);
+  if (!getFromStorage("first_visit")) {
+    setToStorage("first_visit", false);
     welcomePopper();
   }
 });
