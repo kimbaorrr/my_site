@@ -137,7 +137,7 @@ $(document).ready(function () {
      * Chức năng tìm tiện ích
      */
     const searchText = $(this).parent().find("input").val().toLowerCase().trim();
-    const counter = 0;
+    let counter = 0;
     $("#sidebarTienIch li").each(function () {
       const tiTitle = $(this).find("span").text().toLowerCase();
       if(tiTitle.includes(searchText)) {
