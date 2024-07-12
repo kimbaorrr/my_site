@@ -114,7 +114,7 @@
   {
     "id": 8,
     "project_name": "Covid Segmentation",
-    "project_url": "https://ai.baoit.xyz/covid_segmentation",
+    "project_url": "https://ai.baoit.xyz/segmentation?model_type=segmentation&project_id=0",
     "description": "Xây dựng, đào tạo & triển khai mô hình phân đoạn viêm phổi do Covid trên nền Web",
     "ds_name": "COVID-19 CT Images Segmentation",
     "ds_url": "https://www.kaggle.com/c/covid-segmentation/overview",
