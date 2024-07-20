@@ -42,7 +42,7 @@ function loadNavBar() {
    */
   $("nav").append(`
   <!-- Wide Screen Nav --> 
-  <nav class="sticky top-0 z-50 overflow-hidden bg-white/75 py-3 backdrop-blur supports-backdrop-blur:bg-white/95 dark:bg-black">  
+  <nav class="sticky top-0 z-50 overflow-hidden bg-white/75 py-3 backdrop-blur supports-backdrop-blur:bg-white/95 dark:bg-dark">  
   <div class="flex items-center justify-between mx-auto max-w-3xl md:max-w-4xl xl:max-w-5xl px-3 sm:px-6 xl:px-0">
     <!-- Left Nav --> 
     <a href="/" class="flex items-center">
@@ -169,7 +169,7 @@ function loadFooter() {
     </div>
   </div>
   <!-- Back To Top -->
-  <button type="button" id="btnBackToTop" class="fixed bottom-5 right-5 hidden p-3 text-white bg-red-700 rounded-full hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+  <button type="button" id="btnBackToTop" class="fixed bottom-5 right-5 hidden p-3 text-white bg-red-700 rounded-full hover:bg-red-800 focus:outline-none dark:bg-red-600 dark:hover:bg-red-800">
     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
     </svg>
@@ -182,7 +182,7 @@ function loadFooter() {
 function changeThemeMode(mode) {
   /**
    * Chuyển đỏi giao diện sáng/tối
-   * @param {string} mode Chế độ 
+   * @param {string} mode Chế độ
    */
   const change_color = $("#changeColorTheme");
   switch (mode) {
@@ -287,7 +287,7 @@ $(document).ready(function () {
      * Đổi màu nền nút Active trên NavBar
      */
     if ($(this).attr("href") === window.location.pathname) {
-      $(this).addClass("bg-gray-300 dark:bg-red-500");
+      $(this).addClass("bg-gray-300 dark:bg-red-600");
       $(this).on("click", function (e) {
         e.preventDefault();
       });
