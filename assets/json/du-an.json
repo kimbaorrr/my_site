@@ -6,7 +6,7 @@
     "description": "Triển khai mô hình phân loại hình ảnh MobileNet V1 trên nền Web",
     "ds_name": "ILSVRC 2012",
     "ds_url": "https://www.kaggle.com/c/imagenet-object-localization-challenge",
-    "fe": "TailwindCSS, Javascript",
+    "fe": "Tailwind CSS, Javascript",
     "be": "NodeJS",
     "type": "Cá nhân",
     "status": true,
