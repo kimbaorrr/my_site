@@ -54,64 +54,11 @@
                                 class="bg-blue-700 hover:bg-blue-800 dark:hover:bg-blue-700 dark:bg-blue-600 px-4 py-2 rounded-lg font-medium text-sm text-white focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">0</button>
                         </div>
                         <hr class="border-1 border-gray-500 mt-3 rounded">
-                        <ul class="mt-10 sm:mt-0 font-medium" data-accordion="collapse" id="sidebarTienIch"
-                            data-active-classes="bg-gray-300 dark:bg-gray-700 text-black dark:text-white duration-300"
-                            data-inactive-classes="text-black dark:text-white duration-300">
-                            <li class="my-3">
-                                <a href="#" data-accordion-target="#qrCode_APP" aria-expanded="true"
-                                    class="flex items-center p-2 rounded-lg">
-                                    <img class="inline-block ml-0.5" src="/assets/images/qr.svg" width="22" height="22"
-                                        alt="">
-                                    <span class="ml-2 text-sm">QR Code Generator</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg"
-                                    data-accordion-target="#base64_APP">
-                                    <img class="inline-block ml-0.5" src="/assets/images/code-review.svg" width="22"
-                                        height="22" alt="">
-                                    <span class="ml-2 text-sm">Base64 Encoder/Decoder</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg">
-                                    <img class="inline-block ml-0.5" src="/assets/images/shuffle.svg" width="22"
-                                        height="22" alt="">
-                                    <span class="ml-2 text-sm">Random String Generator</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg">
-                                    <img class="inline-block ml-0.5" src="/assets/images/padlock.svg" width="22"
-                                        height="22" alt="">
-                                    <span class="ml-2 text-sm">Password Generator</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg">
-                                    <img class="inline-block ml-0.5" src="/assets/images/generative-image.svg"
-                                        width="22" height="22" alt="">
-                                    <span class="ml-2 text-sm">IMG-to-PDF Converter</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg" data-accordion-target="#utf8_APP">
-                                    <img class="inline-block ml-0.5" src="/assets/images/utf8.svg" width="22"
-                                        height="22" alt="">
-                                    <span class="ml-2 text-sm">UTF-8 Encoder/Decoder</span>
-                                </a>
-                            </li>
-                            <li class="my-3">
-                                <a href="#" class="flex items-center p-2 rounded-lg">
-                                    <img class="inline-block ml-0.5" src="/assets/images/data-encryption.svg" width="22"
-                                        height="22" alt="">
-                                    <span class="ml-2 text-sm">SHA Encrypt/Decrypt</span>
-                                </a>
-                            </li>
+                        <ul class="mt-10 sm:mt-0 font-medium" id="dsTienIch">
                         </ul>
                     </div>
                     <!--QR APP-->
-                    <div class="flex-1 mt-10 md:mt-0 xl:px-5 overflow-y-auto" id="qrCode_APP">
+                    <div class="flex-1 mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="qrCode_APP">
                         <div id="qrInput"
                             class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
                             <div class="relative w-full">
@@ -141,7 +88,7 @@
                                     <label for="qrMauSac"
                                         class="block font-medium text-black text-sm dark:text-white">Màu sắc</label>
                                     <input type="color" name="qrMauSac" value="#000000" id="qrMauSac"
-                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-5 border focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:text-white dark:focus:ring-blue-500">
+                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-5 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500">
                                 </div>
                                 <div class="col-span-2">
                                     <label for="qrChenAnh"
@@ -159,7 +106,7 @@
                         </div>
                     </div>
                     <!--BASE64 APP-->
-                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto" id="base64_APP">
+                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="base64_APP">
                         <div id="base64Input"
                             class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
                             <div class="relative w-full">
@@ -186,7 +133,7 @@
                         </div>
                     </div>
                     <!--UTF8 APP-->
-                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto" id="utf8_APP">
+                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="utf8_APP">
                         <div id="utf8Input"
                             class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
                             <div class="relative w-full">
@@ -221,6 +168,7 @@
         </div>
     </div>
 </body>
+
 <script src="https://jsdelivr.b-cdn.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 <script src="https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 <script src="https://jsdelivr.b-cdn.net/npm/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>

@@ -1,3 +1,48 @@
+var dsTienIch = undefined;
+
+async function getTienIch() {
+  /**
+   * Tải tệp JSON chứa thông tin các tiện ích
+   */
+  try {
+    const data = await fetch("/assets/json/tien-ich.json");
+    const response = await data.json();
+    dsTienIch = response;
+  } catch (e) {
+    console.error("Không thể tải thông tin tiện ích. Thử lại !");
+  }
+}
+
+async function loadTienIch() {
+  /**
+   * Hiện danh sách tiện ích và đặt vào sidebar trên DOM
+   */
+  // Đọc danh sách tiện ích từ File Json
+  await getTienIch();
+  // Chọn selector dsTienIch
+  const ds_tien_ich = $("#dsTienIch");
+  // Lặp qua từng tiện ích & đặt chúng vào DOM
+  $.each(dsTienIch, function (idx, item) {
+    const first_ti = idx === 0;
+    const list_ti = `
+      <li class="my-3 
+      ${first_ti ? "bg-gray-300 dark:bg-gray-700" : ""} 
+      text-black dark:text-white duration-300">
+        <a href="#" class="flex items-center p-2 rounded-lg"
+          data-ti-target="${item.selector_id}" aria-controls="${
+      item.selector_id
+    }">
+          <img class="inline-block ml-0.5" src="${
+            item.icon
+          }" width="22" height="22" alt="">
+          <span class="ml-2 text-sm">${item.name}</span>
+        </a>
+      </li>
+    `;
+    ds_tien_ich.append(list_ti);
+  });
+}
+
 function qrCodeGenerator() {
   /**
    * QR Code Generator
@@ -59,7 +104,9 @@ function base64Converter(type, text) {
   /**
    * Chuyển đổi chuỗi thường sang base64 & ngược lại
    */
-  return type == "encode" ? btoa(encodeURIComponent(text)) : atob(encodeURIComponent(text));
+  return type == "encode"
+    ? btoa(encodeURIComponent(text))
+    : atob(encodeURIComponent(text));
 }
 
 function utf8Converter(type, text) {
@@ -71,16 +118,18 @@ function utf8Converter(type, text) {
 
 function exportTXT(text, classes, this_selector) {
   const selector = $(this_selector).find(".exportTXT");
-  const blob = new Blob([text], { type: 'text/plain' });
+  const blob = new Blob([text], { type: "text/plain" });
   console.log(blob);
-  $('<a></a>')
-      .attr('href', window.URL.createObjectURL(blob))
-      .attr('download', 'downloaded-file.txt')
-      .addClass(classes)
-      .appendTo(selector);
+  $("<a></a>")
+    .attr("href", window.URL.createObjectURL(blob))
+    .attr("download", "downloaded-file.txt")
+    .addClass(classes)
+    .appendTo(selector);
 }
 
-$(document).ready(function () {
+$(document).ready(async () => {
+  await loadTienIch();
+
   $(".textarea_counter").on("keyup", function () {
     /**
      * Đếm số kí tự có trong textarea mỗi khi nhấn phím
@@ -88,19 +137,21 @@ $(document).ready(function () {
     const charCounter = `${$(this).val().length} kí tự`;
     $(this).parent().find("span").text(charCounter);
   });
-  
-  $('#qrCode_APP #qrInput').find('input, textarea').on("keyup change", function () {
-    /**
-     * Nếu có thay đổi ở các trường thì tạo QR mới
-     */
-    const qrNoiDung = $("textarea[name=qrNoiDung]");
-    if (qrNoiDung.val().length > 0) {
-      $("#qrOutput").css("display", "flex");
-      qrCodeGenerator();
-    } else {
-      $("#qrOutput").hide();
-    }
-  });
+
+  $("#qrCode_APP #qrInput")
+    .find("input, textarea")
+    .on("keyup change", function () {
+      /**
+       * Nếu có thay đổi ở các trường thì tạo QR mới
+       */
+      const qrNoiDung = $("textarea[name=qrNoiDung]");
+      if (qrNoiDung.val().length > 0) {
+        $("#qrOutput").css("display", "flex");
+        qrCodeGenerator();
+      } else {
+        $("#qrOutput").hide();
+      }
+    });
 
   $("#base64_APP button").click(function () {
     /**
@@ -120,33 +171,61 @@ $(document).ready(function () {
     const text = $("#utf8Input textarea[name=utf8NoiDung]").val();
     const output = utf8Converter(type, text);
     $("#utf8Output textarea").text(output);
-    exportTXT(output, "text-blue-600 dark:text-blue-500 hover:text-blue-800 hover:dark:text-blue-800 text-xs font-semibold", "#utf8Output");
+    exportTXT(
+      output,
+      "text-blue-600 dark:text-blue-500 hover:text-blue-800 hover:dark:text-blue-800 text-xs font-semibold",
+      "#utf8Output"
+    );
   });
 
   $("#btnChonTienIch").click(function () {
     const sidebarTienIch = $("#sidebarTienIch");
     const btnChonTienIch = $(this);
-  
+
     sidebarTienIch.toggleClass("left-[248px] w-64 left-0 w-1/4");
     btnChonTienIch.toggleClass("right-0 left-0");
   });
-  
 
-  $("#searchBar").find("input, button").on("keyup click", function () {
-    /**
-     * Chức năng tìm tiện ích
-     */
-    const searchText = $(this).parent().find("input").val().toLowerCase().trim();
-    let counter = 0;
-    $("#sidebarTienIch li").each(function () {
-      const tiTitle = $(this).find("span").text().toLowerCase();
-      if(tiTitle.includes(searchText)) {
-        counter++;
-        $(this).show()
-      } else {
-        $(this).hide();
-      } 
+  $("#searchBar")
+    .find("input, button")
+    .on("keyup click", function () {
+      /**
+       * Chức năng tìm tiện ích
+       */
+      const searchText = $(this)
+        .parent()
+        .find("input")
+        .val()
+        .toLowerCase()
+        .trim();
+      let counter = 0;
+      $("#dsTienIch li").each(function () {
+        const tiTitle = $(this).find("span").text().toLowerCase();
+        if (tiTitle.includes(searchText)) {
+          counter++;
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+      $("#searchBar button").text(counter);
     });
-    $("#searchBar button").text(counter);
+
+  $("#dsTienIch li a").on("click", function () {
+    /**
+     * Chức năng hiển thị tiện ích khi click vào nút
+     */
+    const liParent = $(this).parent();
+    const tiTarget = $(this).data("ti-target");
+    // Thêm class bg-gray nếu li tag được chọn & ngược lại
+    liParent
+      .addClass("bg-gray-300 dark:bg-gray-700 text-black dark:text-white")
+      .removeClass("text-black dark:text-white duration-300")
+      .siblings()
+      .removeClass("bg-gray-300 dark:bg-gray-700 text-black dark:text-white")
+      .addClass("text-black dark:text-white");
+    // Xóa class hidden nếu li tag được chọn & ngược lại
+    $(".ti").removeClass("block").addClass("hidden");
+    $(tiTarget).removeClass("hidden").addClass("block");
   });
 });
