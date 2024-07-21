@@ -227,5 +227,6 @@ $(document).ready(async () => {
     // Xóa class hidden nếu li tag được chọn & ngược lại
     $(".ti").removeClass("block").addClass("hidden");
     $(tiTarget).removeClass("hidden").addClass("block");
+    $("#btnChonTienIch").click();
   });
 });

@@ -108,7 +108,7 @@ function loadNavBar() {
         <!-- Clock -->
         <div id="subNavClock" class="p-1.5 font-medium cursor-default"></div>
         <!-- Toggle Menu -->
-        <button data-collapse-toggle="mobileNav" type="button" aria-label="Toggle Menu" class="md:hidden p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+        <button type="button" aria-label="Toggle Menu" class="md:hidden p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
           <svg width="20" height="20" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
@@ -119,15 +119,14 @@ function loadNavBar() {
 </nav>
 <!-- Mobile Nav -->
 <nav class="hidden" id="mobileNav">
-  <div class="fixed right-2 flex flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 justify-center items-center">
-    <a href="/" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Trang chủ</a>
-    <a href="/du-an.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Dự án</a>
-    <a href="/tien-ich.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Tiện ích</a>
-    <a href="/ly-lich.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Lý lịch</a>
-    <a href="/lien-he.html" class="flex px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">Liên hệ</a>
+  <div class="fixed right-2 flex flex-col space-y-1.5 px-3 sm:px-6 xl:px-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50">
+    <a href="/" class="flex w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 justify-center">Trang chủ</a>
+    <a href="/du-an.html" class="flex w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 justify-center">Dự án</a>
+    <a href="/tien-ich.html" class="flex w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 justify-center">Tiện ích</a>
+    <a href="/ly-lich.html" class="flex w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 justify-center">Lý lịch</a>
+    <a href="/lien-he.html" class="flex w-full p-2 rounded hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-300 justify-center">Liên hệ</a>
   </div>
 </nav>
-
   `);
 }
 
@@ -340,5 +339,13 @@ $(document).ready(function () {
       default:
         break;
     }
+  });
+
+  $("button[aria-label='Toggle Menu']").on("click", () => {
+    /**
+     * Sự kiện nhấn nút Toggle Menu từ Mobile
+     */
+    const mobileNav = $("#mobileNav");
+    mobileNav.toggleClass("hidden");
   });
 });

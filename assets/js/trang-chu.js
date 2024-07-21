@@ -38,4 +38,5 @@ $(document).ready(function () {
     setToStorage("first_visit", false);
     welcomePopper();
   }
+
 });
