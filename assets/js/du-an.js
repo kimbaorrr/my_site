@@ -9,7 +9,7 @@ async function getDuAn() {
     const response = await data.json();
     dsDuAn = response;
   } catch (e) {
-    console.error("Không tải tải thông tin dự án. Thử lại !");
+    console.error("Không thể tải thông tin dự án. Thử lại !");
   }
 }
 
@@ -21,13 +21,9 @@ async function loadDuAn() {
   $.each(dsDuAn, function (idx, item) {
     // Đặt nhãn status
     const item_status = item.status ? "Done" : "Pending";
-    const item_status_color = `<span class="px-4 py-0.5 ${
-      item.status ? "bg-green-600" : "bg-red-600"
-    } mb-1 rounded-lg">${item_status}</span>`;
     const item_project_url = `<button type="button" 
       onclick="updateLuotTruyCap(${item.id}, '${item.project_url}');" 
-      class="px-4 py-0.5 bg-blue-600 hover:bg-blue-800 mb-1 
-      rounded-lg ${
+      class="btnThuNghiem ${
         item.project_url == "#" ? "opacity-50 cursor-not-allowed" : ""
       }" ${item.project_url == "#" ? "disabled" : ""}>
       Thử nghiệm
@@ -50,7 +46,9 @@ async function loadDuAn() {
     <div class="mt-1 mb-1">
     <div class="flex">
       <span class="mt-2">Dataset:</span>
-      <a href="${item.ds_url}" class="text-blue-800 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400" target="_blank">${item.ds_name}</a>
+      <a href="${
+        item.ds_url
+      }" class="text-blue-800 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400" target="_blank">${item.ds_name}</a>
     </div>
     <div class="flex">
       <span class="mt-2">FE:</span>
@@ -66,12 +64,17 @@ async function loadDuAn() {
     </div>
     <div class="flex">
       <span class="mt-2">Mã nguồn:</span>
-      <a href="${item.git}" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400" target="_blank">GitHub</a>
+      <a href="${
+        item.git
+      }" class="text-blue-600 dark:text-blue-300 mt-2 ml-1 hover:text-red-600 hover:dark:text-red-400" target="_blank">GitHub</a>
     </div>
     </div>
     
   </div>
-  <div class="flex justify-between mt-4 items-end text-white text-xs"> ${item_status_color} 
+  <div class="flex justify-between mt-4 items-end text-white text-xs">
+    <span class="${
+      item.status ? "badgeDone" : "badgePending"
+    }">${item_status}</span> 
     ${item_project_url}
   </div>
 </div>

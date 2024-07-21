@@ -42,7 +42,7 @@ function loadNavBar() {
    */
   $("nav").append(`
   <!-- Wide Screen Nav --> 
-  <nav class="sticky top-0 z-50 overflow-hidden bg-white/75 py-3 backdrop-blur supports-backdrop-blur:bg-white/95 dark:bg-dark">  
+  <nav class="sticky top-0 z-40 overflow-hidden bg-white/75 py-3 backdrop-blur supports-backdrop-blur:bg-white/95 dark:bg-dark">  
   <div class="flex items-center justify-between mx-auto max-w-3xl md:max-w-4xl xl:max-w-5xl px-3 sm:px-6 xl:px-0">
     <!-- Left Nav --> 
     <a href="/" class="flex items-center">
@@ -64,14 +64,24 @@ function loadNavBar() {
       </div>
       <!-- Icon Nav -->
       <div id="iconNav" class="flex items-center gap-1">
-        <!-- Status Page Button -->
-        <button type="button" aria-label="Status Page" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-area-chart">
-            <path d="M3 3v18h18"></path>
-            <path d="M7 12v5h12V8l-5 5-4-4Z"></path>
-          </svg>
-        </button>
-        <!-- Change Color Theme Button -->
+      <!-- Feedback Modal Button -->
+      <button type="button" data-modal-target="questionModal" data-modal-toggle="questionModal" aria-label="questionModal" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             width="21" 
+             height="21" 
+             viewBox="0 0 24 24" 
+             fill="none" 
+             stroke="currentColor" 
+             stroke-width="2" 
+             stroke-linecap="round" 
+             stroke-linejoin="round" 
+             class="lucide lucide-message-circle-question">
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <path d="M12 17h.01"/>
+        </svg>
+      </button>
+      <!-- Change Color Theme Button -->
         <button type="button" id="changeColorTheme" aria-label="Change Color Theme" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
           <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun">
             <circle cx="12" cy="12" r="4"></circle>
@@ -130,36 +140,36 @@ function loadFooter() {
         <span>&copy; 2024 BaoIT. All rights reserved.</span>
       </div>
       <div class="flex justify-center space-x-4 items-center">
-        <a class="text-gray-700 hover:text-black dark:text-white" href="https://github.com/kimbaorrr" target="_blank">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="https://github.com/kimbaorrr" target="_blank" aria-label="Github">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
             <path d="M9 18c-4.51 2-5-2-7-2"></path>
           </svg>
         </a>
-        <a class="text-gray-700 hover:text-black dark:text-white" href="https://x.com/KimBao_0708" target="_blank">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="https://x.com/KimBao_0708" target="_blank" aria-label="X">
           <svg width="24" height="24" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="currentColor"></path>
           </svg>
         </a>
-        <a class="text-gray-700 hover:text-black dark:text-white" href="https://www.linkedin.com/in/kimbaorrr/" target="_blank">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="https://www.linkedin.com/in/kimbaorrr/" target="_blank" aria-label="Linkedin">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
             <rect width="4" height="12" x="2" y="9"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </a>
-        <a class="text-gray-700 hover:text-black dark:text-white" href="mailto:nguyenkimbao.0708@gmail.com">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="mailto:nguyenkimbao.0708@gmail.com" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
         </a>
-        <a class="text-gray-700 hover:text-black dark:text-white" href="https://facebook.com/">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="https://facebook.com/" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
           </svg>
         </a>
-        <a class="text-gray-700 hover:text-black dark:text-white" href="https://www.youtube.com/@kimbao5650">
+        <a class="text-gray-700 hover:text-black dark:text-white" href="https://www.youtube.com/@kimbao5650" aria-label="Youtube">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
             <path d="m10 15 5-3-5-3z"></path>
