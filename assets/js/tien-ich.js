@@ -210,6 +210,9 @@ $(document).ready(async () => {
       });
       $("#searchBar button").text(counter);
     });
+  
+  // Đếm tất cả tiện ích khi truy cập trang
+  $("#searchBar button").text($("#dsTienIch li").length);
 
   $("#dsTienIch li a").on("click", function () {
     /**
