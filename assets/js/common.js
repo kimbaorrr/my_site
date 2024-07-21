@@ -65,7 +65,7 @@ function loadNavBar() {
       <!-- Icon Nav -->
       <div id="iconNav" class="flex items-center gap-1">
       <!-- Feedback Modal Button -->
-      <button type="button" data-modal-target="questionModal" data-modal-toggle="questionModal" aria-label="questionModal" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+      <button type="button" aria-label="questionModal" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" 
              width="21" 
              height="21" 
@@ -348,4 +348,11 @@ $(document).ready(function () {
     const mobileNav = $("#mobileNav");
     mobileNav.toggleClass("hidden");
   });
+
+  $("button[aria-label='questionModal', button[aria-label='closeQuestionModal']").on("click", () => {
+    /**
+     * Sự kiện nhấn nút để hiện/đóng modal
+     */
+    $("#questionModal").toggleClass("hidden");
+  })
 });
