@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btnThuNghiem {
+        @apply px-4 py-0.5 bg-blue-600 hover:bg-blue-800 mb-1 rounded-lg;
+    }
+    .badgePending {
+        @apply px-4 py-0.5 bg-red-600 mb-1 rounded-lg;
+    }
+    .badgeDone {
+        @apply px-4 py-0.5 bg-green-600 mb-1 rounded-lg;
+    }
+}

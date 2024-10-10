@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dự án</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="keywords"
+        content="Python, HTML, CSS, Javascript, Image Classification, Tensorflow, Keras, SQL, PostgreSQL, SQL, ASP.NET Core MVC, .NET6, .NET7, Nguyen Kim Bao, Kim Bao, BaoIT, nguyen kim bao, kim bao, baoit">
+    <meta name="author" content="Nguyễn Kim Bảo (BaoIT)">
+    <meta property="og:title" content="Nguyễn Kim Bảo">
+    <meta property="og:description" content="Ứng dụng quản lý dự án của Nguyễn Kim Bảo">
+    <meta property="og:image" content="https://baoit.xyzassets/favicon/favicon-32x32.png">
+    <meta property="og:url" content="https://baoit.xyz">
+    <meta name="twitter:title" content="Nguyễn Kim Bảo">
+    <meta name="twitter:description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="twitter:url" content="https://baoit.xyz/assets/favicon/favicon-32x32.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="robots" content="nofollow">
+    <meta name="color-scheme" content="dark">
+    <noscript>Trình duyệt của bạn không hỗ trợ Javascript.!</noscript>
+    <link rel="preconnect" href="https://jsdelivr.b-cdn.net">
+    <link rel="dns-prefetch" href="https://jsdelivr.b-cdn.net">
+    <link rel="stylesheet" href="/assets/css/style.min.css" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/css/twemoji-awesome.min.css" fetchpriority="high">
+    <script src="https://jsdelivr.b-cdn.net/npm/jquery@3.7.1/dist/jquery.min.js" fetchpriority="high"></script>
+    <script src="/assets/js/common.js" fetchpriority="high"></script>
+</head>
+
+<body class="bg-white dark:bg-dark text-black dark:text-white antialiased">
+    <!--NavBar-->
+    <nav data-accordion="collapse"></nav>
+    <div class="mx-auto px-3 sm:px-6 xl:px-0 max-w-3xl md:max-w-4xl xl:max-w-5xl">
+        <div class="flex flex-col justify-between">
+            <modal></modal>
+            <main class="z-0 max-h-screen">
+                <div class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <div class="space-y-2 md:space-y-5 pt-6 pb-0">
+                        <h1
+                            class="font-extrabold text-xl sm:text-4xl md:text-6xl leading-9 sm:leading-10 md:leading-[5.5rem] tracking-tight">
+                            Dự án</h1>
+                        <p class="text-base text-gray-500 md:text-lg dark:text-gray-400 md:leading-7">Danh sách những dự
+                            án mà mình đã và đang làm.</p>
+                        <div class="flex sm:flex-row flex-col justify-between items-center">
+                            <div class="space-y-2 sm:space-y-0 font-semibold text-gray-900 text-sm dark:text-gray-100"
+                                id="daStatus">
+                                <button type="button" data-da-filter-status="all"
+                                    class="bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 px-4 py-2 border-b-4 border-blue-500 w-full sm:w-36 duration-300">Tất
+                                    cả</button>
+                                <button type="button" data-da-filter-status="pending"
+                                    class="border-gray-300 dark:border-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 px-4 py-2 border-b-4 w-full sm:w-36 duration-300">Chưa
+                                    hoàn thành</button>
+                                <button type="button" data-da-filter-status="done"
+                                    class="border-gray-300 dark:border-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-600 px-4 py-2 border-b-4 w-full sm:w-36 duration-300">Đã
+                                    hoàn thành</button>
+                            </div>
+                            <div class="flex items-center mt-4 sm:mt-0" id="searchBar">
+                                <!--
+                                  <button class="flex justify-center items-center hover:bg-gray-300 dark:bg-gray-500 mr-2 w-10 h-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 576 512">
+                                      <path d="M183.6 469.6C177.5 476.2 169 480 160 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L128 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 320c0-17.7 14.3-32 32-32H480c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9L429.3 416H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H352c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9L402.7 352H352c-17.7 0-32-14.3-32-32zM416 32c12.1 0 23.2 6.8 28.6 17.7l64 128 16 32c7.9 15.8 1.5 35-14.3 42.9s-35 1.5-42.9-14.3L460.2 224H371.8l-7.2 14.3c-7.9 15.8-27.1 22.2-42.9 14.3s-22.2-27.1-14.3-42.9l16-32 64-128C392.8 38.8 403.9 32 416 32zM395.8 176h40.4L416 135.6 395.8 176z" />
+                                    </svg>
+                                  </button>
+                                    -->
+                                <input type="text" placeholder="Tìm dự án..."
+                                    class="border-2 border-gray-400 bg-gray-50 dark:bg-gray-700 px-4 py-2 focus:border-blue-500 rounded-md w-full sm:w-auto text-black text-sm focus:outline-none focus:ring-blue-500 dark:text-white dark:placeholder-gray-400">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Begin cards-->
+                <div class="items-baseline gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-gray-100 dark:bg-gray-500 shadow-lg my-3 md:h-96 overflow-y-auto"
+                    id="listDuAn"></div>
+        </div>
+        </main>
+        <footer></footer>
+    </div>
+    </div>
+</body>
+<script src="https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script src="https://jsdelivr.b-cdn.net/npm/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>
+<script src="/assets/js/du-an.js"></script>
+
+</html>

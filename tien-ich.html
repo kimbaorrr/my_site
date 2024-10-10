@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tiện ích</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <meta name="description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="keywords"
+        content="Python, HTML, CSS, Javascript, Image Classification, Tensorflow, Keras, SQL, PostgreSQL, SQL, ASP.NET Core MVC, .NET6, .NET7, Nguyen Kim Bao, Kim Bao, BaoIT, nguyen kim bao, kim bao, baoit">
+    <meta name="author" content="Nguyễn Kim Bảo (BaoIT)">
+    <meta property="og:title" content="Nguyễn Kim Bảo">
+    <meta property="og:description" content="Ứng dụng quản lý dự án của Nguyễn Kim Bảo">
+    <meta property="og:image" content="https://baoit.xyzassets/favicon/favicon-32x32.png">
+    <meta property="og:url" content="https://baoit.xyz">
+    <meta name="twitter:title" content="Nguyễn Kim Bảo">
+    <meta name="twitter:description" content="Blog của Nguyễn Kim Bảo (BaoIT)">
+    <meta name="twitter:url" content="https://baoit.xyz/assets/favicon/favicon-32x32.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="robots" content="nofollow">
+    <meta name="color-scheme" content="dark">
+    <noscript>Trình duyệt của bạn không hỗ trợ Javascript.!</noscript>
+    <link rel="preconnect" href="https://jsdelivr.b-cdn.net">
+    <link rel="dns-prefetch" href="https://jsdelivr.b-cdn.net">
+    <link rel="stylesheet" href="/assets/css/style.min.css" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/css/twemoji-awesome.min.css" fetchpriority="high">
+    <script src="https://jsdelivr.b-cdn.net/npm/jquery@3.7.1/dist/jquery.min.js" fetchpriority="high"></script>
+    <script src="/assets/js/common.js" fetchpriority="high"></script>
+</head>
+
+<body class="bg-white dark:bg-dark text-black dark:text-white antialiased">
+    <!--NavBar-->
+    <nav data-accordion="collapse"></nav>
+    <div class="mx-auto px-3 sm:px-6 xl:px-0 max-w-3xl md:max-w-4xl xl:max-w-5xl">
+        <div class="flex flex-col justify-between">
+            <modal></modal>
+            <main class="z-0 max-h-screen">
+                <div class="relative flex bg-gray-100 dark:bg-gray-900 rounded-2xl h-[90vh]">
+                    <button class="top-0 left-0 z-40 absolute md:hidden bg-gray-200 dark:bg-gray-600 p-2 rounded-lg"
+                        id="btnChonTienIch">
+                        <i class="inline-block twa twa-hammer-and-wrench twa-lg"></i> Chọn tiện ích </button>
+                    <div class="top-0 left-0 z-30 md:static absolute bg-gray-200 dark:bg-gray-800 p-2 rounded-lg w-1/4 h-full transition-transform -translate-x-full md:translate-x-0 duration-300 overflow-y-auto ease-in-out"
+                        id="sidebarTienIch">
+                        <div class="gap-3 grid grid-cols-4" id="searchBar">
+                            <input type="text"
+                                class="border-2 border-gray-400 col-span-3 bg-gray-50 dark:bg-gray-700 px-2 py-1 focus:border-blue-500 rounded-md text-black focus:outline-none focus:ring-blue-500 dark:text-white dark:placeholder-gray-400"
+                                placeholder="Tìm tiện ích...">
+                            <button type="button"
+                                class="bg-blue-700 hover:bg-blue-800 dark:hover:bg-blue-700 dark:bg-blue-600 px-4 py-2 rounded-lg font-medium text-sm text-white focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">0</button>
+                        </div>
+                        <hr class="border-1 border-gray-500 mt-3 rounded">
+                        <ul class="mt-10 sm:mt-0 font-medium" id="dsTienIch">
+                        </ul>
+                    </div>
+                    <!--QR APP-->
+                    <div class="flex-1 mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="qrCode_APP">
+                        <div id="qrInput"
+                            class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
+                            <div class="relative w-full">
+                                <textarea rows="6" name="qrNoiDung"
+                                    class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 pb-8 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm textarea_counter focus:ring-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+                                    placeholder="Nội dung cần tạo QR..."></textarea>
+                                <span
+                                    class="right-2.5 bottom-0 absolute p-2.5 font-bold text-gray-500 text-sm char_counter">0
+                                    kí
+                                    tự</span>
+                            </div>
+                            <div class="gap-4 grid sm:grid-cols-2 md:grid-cols-4">
+                                <div class="col-span-2">
+                                    <label for="qrTieuDe"
+                                        class="block font-medium text-black text-sm dark:text-white">Tiêu đề</label>
+                                    <input type="text" name="qrTieuDe" id="qrTieuDe"
+                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-2.5 border focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:text-white dark:focus:ring-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrTieuDeCon"
+                                        class="block font-medium text-black text-sm dark:text-white">Tiêu
+                                        đề con</label>
+                                    <input type="text" name="qrTieuDeCon" id="qrTieuDeCon"
+                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-2.5 border focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:text-white dark:focus:ring-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrMauSac"
+                                        class="block font-medium text-black text-sm dark:text-white">Màu sắc</label>
+                                    <input type="color" name="qrMauSac" value="#000000" id="qrMauSac"
+                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-5 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="qrChenAnh"
+                                        class="block font-medium text-black text-sm dark:text-white">Chèn ảnh</label>
+                                    <input id="qrChenAnh"
+                                        class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 border rounded-lg w-full text-gray-900 text-sm dark:text-gray-400 cursor-pointer focus:outline-none dark:placeholder-gray-400"
+                                        name="qrChenAnh" type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="qrOutput"
+                            class="flex-col justify-center items-center border-2 hidden bg-gray-100 dark:bg-gray-800 mt-4 py-12 p-4 border-red-400 rounded-lg">
+                            <div id="qrCode" class="pb-6"></div>
+                            <div id="qrDownload"></div>
+                        </div>
+                    </div>
+                    <!--BASE64 APP-->
+                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="base64_APP">
+                        <div id="base64Input"
+                            class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
+                            <div class="relative w-full">
+                                <textarea rows="6" name="base64NoiDung"
+                                    class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 pb-8 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm textarea_counter focus:ring-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+                                    placeholder="Nội dung cần Encode/Decode..."></textarea>
+                                <span
+                                    class="right-2.5 bottom-0 absolute p-2.5 font-bold text-gray-500 text-sm char_counter">0
+                                    kí tự</span>
+                            </div>
+                            <div class="flex justify-center items-center space-x-4">
+                                <button type="button" data-base64-action="encode"
+                                    class="bg-red-700 hover:bg-red-800 dark:hover:bg-red-700 dark:bg-red-600 px-4 py-2 rounded-lg font-semibold text-sm text-white focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">Encode</button>
+                                <button type="button" data-base64-action="decode"
+                                    class="bg-green-700 hover:bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 px-4 py-2 rounded-lg font-semibold text-sm text-white focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800">Decode</button>
+                            </div>
+                        </div>
+                        <div id="base64Output"
+                            class="flex-col justify-center items-center border-2 bg-gray-100 dark:bg-gray-800 mt-4 py-8 p-4 border-red-400 rounded-lg">
+                            <span class="font-bold text-lg">Base64 Output ✍️</span>
+                            <textarea rows="8"
+                                class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-2.5 pb-8 border focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:text-white dark:focus:ring-blue-500"
+                                readonly></textarea>
+                        </div>
+                    </div>
+                    <!--UTF8 APP-->
+                    <div class="flex-1 hidden mt-10 md:mt-0 xl:px-5 overflow-y-auto ti" id="utf8_APP">
+                        <div id="utf8Input"
+                            class="space-y-3 border-2 border-orange-500 dark:border-orange-800 p-4 rounded-lg">
+                            <div class="relative w-full">
+                                <textarea rows="6" name="utf8NoiDung"
+                                    class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 pb-8 border focus:border-blue-500 dark:focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm textarea_counter focus:ring-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
+                                    placeholder="Nội dung cần Encode/Decode..."></textarea>
+                                <span
+                                    class="right-2.5 bottom-0 absolute p-2.5 font-bold text-gray-500 text-sm char_counter">0
+                                    kí tự</span>
+                            </div>
+                            <div class="flex justify-center items-center space-x-4">
+                                <button type="button" data-utf8-action="encode"
+                                    class="bg-red-700 hover:bg-red-800 dark:hover:bg-red-700 dark:bg-red-600 px-4 py-2 rounded-lg font-semibold text-sm text-white focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">Encode</button>
+                                <button type="button" data-utf8-action="decode"
+                                    class="bg-green-700 hover:bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 px-4 py-2 rounded-lg font-semibold text-sm text-white focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800">Decode</button>
+                            </div>
+                        </div>
+                        <div id="utf8Output"
+                            class="flex-col justify-center items-center border-2 bg-gray-100 dark:bg-gray-800 mt-4 py-8 p-4 border-red-400 rounded-lg">
+                            <div class="flex justify-between items-end">
+                                <span class="font-bold text-lg">UTF-8 Output ✍️</span>
+                                <div class="exportTXT"></div>
+                            </div>
+                            <textarea rows="8"
+                                class="block border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 mt-2 p-2.5 pb-8 border focus:border-blue-500 rounded-lg w-full text-gray-900 text-sm focus:ring-blue-500 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:text-white dark:focus:ring-blue-500"
+                                readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+
+<script src="https://jsdelivr.b-cdn.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script src="https://jsdelivr.b-cdn.net/npm/easyqrcodejs@4.6.1/dist/easy.qrcode.min.js"></script>
+<script src="https://jsdelivr.b-cdn.net/npm/jssha@3.3.1/dist/sha.min.js"></script>
+<script src="/assets/js/tien-ich.js"></script>
+
+</html>
